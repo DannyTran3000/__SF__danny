@@ -1,0 +1,40 @@
+.hero {
+  &__container {
+    max-width: 100rem;
+    min-height: 100vh;
+    margin: 0 auto;
+    padding: 0 12rem;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__sub-heading {
+    margin: 0 0 0.8rem 0;
+
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+
+  &__heading {
+    margin: 0 0 1rem 0;
+
+    font-size: 4.8rem;
+    line-height: 5.4rem;
+  }
+
+  &__description {
+    max-width: 36rem;
+
+    line-height: 1.5;
+  }
+
+  &__banner {
+    width: 32rem;
+  }
+}
