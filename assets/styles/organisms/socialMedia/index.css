@@ -1,0 +1,25 @@
+.social-media {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--white-smoke);
+}
+.social-media__banner {
+  width: 150px;
+  height: 150px;
+  margin: 0 0 50px 0;
+}
+.social-media__heading {
+  margin: 0 0 12px 0;
+  font-size: 32px;
+  line-height: 1.3;
+}
+.social-media__heading-highlight {
+  color: var(--lime-green);
+}
+.social-media__description {
+  max-width: 640px;
+  margin: 0 0 16px 0;
+  line-height: 2;
+  text-align: center;
+}/*# sourceMappingURL=index.css.map */

@@ -1,29 +1,41 @@
 .hero__container {
-  max-width: 100rem;
-  min-height: 100vh;
+  max-width: 960px;
+  min-height: calc(100vh - 160px);
   margin: 0 auto;
-  padding: 0 12rem;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .hero__content {
-  flex: 1;
+  max-width: 560px;
+  padding: 0 56px 0 0;
 }
 .hero__sub-heading {
-  margin: 0 0 0.8rem 0;
-  font-size: 1.8rem;
-  line-height: 2.4rem;
+  margin: 0 0 16px 0;
+  font-size: 18px;
+  line-height: 24px;
 }
 .hero__heading {
-  margin: 0 0 1rem 0;
-  font-size: 4.8rem;
-  line-height: 5.4rem;
+  margin: 0 0 12px 0;
+  font-size: 48px;
+  line-height: 54px;
 }
 .hero__description {
-  max-width: 36rem;
+  margin: 0 0 24px 0;
+  line-height: 1.5;
+}
+.hero__action {
+  margin: 0 0 12px 0;
+}
+.hero__action-button {
+  margin: 0 12px 0 0;
+}
+.hero__joke {
+  font-size: 12px;
   line-height: 1.5;
 }
 .hero__banner {
-  width: 32rem;
+  width: 360px;
+  height: 360px;
 }/*# sourceMappingURL=index.css.map */

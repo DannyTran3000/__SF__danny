@@ -1,40 +1,55 @@
 .hero {
   &__container {
-    max-width: 100rem;
-    min-height: 100vh;
+    max-width: 960px;
+    min-height: calc(100vh - 160px);
     margin: 0 auto;
-    padding: 0 12rem;
 
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
   &__content {
-    flex: 1;
+    max-width: 560px;
+    padding: 0 56px 0 0;
   }
 
   &__sub-heading {
-    margin: 0 0 0.8rem 0;
+    margin: 0 0 16px 0;
 
-    font-size: 1.8rem;
-    line-height: 2.4rem;
+    font-size: 18px;
+    line-height: 24px;
   }
 
   &__heading {
-    margin: 0 0 1rem 0;
+    margin: 0 0 12px 0;
 
-    font-size: 4.8rem;
-    line-height: 5.4rem;
+    font-size: 48px;
+    line-height: 54px;
   }
 
   &__description {
-    max-width: 36rem;
+    margin: 0 0 24px 0;
 
     line-height: 1.5;
   }
 
+  &__action {
+    margin: 0 0 12px 0;
+  }
+
+  &__action-button {
+    margin: 0 12px 0 0 ;
+  }
+
+  &__joke {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
   &__banner {
-    width: 32rem;
+    width: 360px;
+    height: 360px;
   }
 }

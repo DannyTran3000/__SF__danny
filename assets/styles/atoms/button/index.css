@@ -1,0 +1,29 @@
+.button {
+  min-width: 160px;
+  height: 42px;
+  padding: 0 16px;
+  background: #000;
+  border: 1px solid #000;
+  border-radius: 8px;
+  color: #fff;
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.25s ease-in-out;
+  cursor: pointer;
+}
+.button:hover {
+  background: transparent;
+  color: #000;
+}
+.button--appearance-ghost {
+  background: transparent;
+  color: #000;
+}
+.button--appearance-ghost:hover {
+  background: #000;
+  color: #fff;
+}
+.button--size-lg {
+  height: 54px;
+}/*# sourceMappingURL=index.css.map */
