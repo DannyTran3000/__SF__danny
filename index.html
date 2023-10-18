@@ -14,8 +14,8 @@
   <!-- End Atoms CSS -->
 
   <!-- Molecules CSS -->
-  <link rel="stylesheet" href="/assets/styles/molecules/skillEditor/index.css">
   <link rel="stylesheet" href="/assets/styles/molecules/serviceCard/index.css">
+  <link rel="stylesheet" href="/assets/styles/molecules/stack/index.css">
   <!-- End Molecules CSS -->
 
   <!-- Organisms CSS -->
@@ -23,6 +23,7 @@
   <link rel="stylesheet" href="/assets/styles/organisms/hero/index.css">
   <link rel="stylesheet" href="/assets/styles/organisms/service/index.css">
   <link rel="stylesheet" href="/assets/styles/organisms/socialMedia/index.css">
+  <link rel="stylesheet" href="/assets/styles/organisms/project/index.css">
   <!-- End Organisms CSS -->
 
   <!-- Templates CSS -->
@@ -46,7 +47,13 @@
               <a href="#about" class="header__menu-item-link">About</a>
             </li>
             <li class="header__menu-item">
-              <a href="#connect" class="header__menu-item-link">Connect Me</a>
+              <a href="#connect" class="header__menu-item-link">Find Me</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#project" class="header__menu-item-link">Inspiration</a>
+            </li>
+            <li class="header__menu-item">
+              <a href="#contact" class="header__menu-item-link">Contact</a>
             </li>
           </ul>
           <div class="header__menu-runner"></div>
@@ -171,20 +178,128 @@
         </div>
       </section>
       <section id="connect" class="social-media">
-        <div class="social-media__banner">
-          <img src="/assets/images/github.png" alt="Github">
+        <div class="social-media__odd">
+          <div class="social-media__banner">
+            <img src="/assets/images/connect.png" alt="Danny Social Media Connect">
+          </div>
+          <h2 class="social-media__heading">
+            Discover my <span class="social-media__heading-highlight">Github</span> portfolio
+          </h2>
+          <p class="social-media__description">
+            I showcase a diverse range of open-source contributions and personal projects. Explore my coding journey,
+            delve into the code, and witness how I've tackled real-world challenges with creativity and precision. My
+            GitHub is a testament to my passion for development and problem-solving.
+          </p>
+          <a href="https://github.com/DannyTran3000" class="social-media__button button button--appearance-ghost"
+            target="_blank">
+            <img src="/assets/images/github.png" alt="Danny Github Link Icon" class="social-media__button-icon">
+            <span>Check My Github Profile</span>
+          </a>
         </div>
-        <h2 class="social-media__heading">
-          Discover my <span class="social-media__heading-highlight">Github</span> portfolio
-        </h2>
-        <p class="social-media__description">
-          I showcase a diverse range of open-source contributions and personal projects. Explore my coding journey,
-          delve into the code, and witness how I've tackled real-world challenges with creativity and precision. My
-          GitHub is a testament to my passion for development and problem-solving.
-        </p>
-        <button class="button button--appearance-ghost">
-          <span>Check My Github Profile</span>
-        </button>
+        <div class="social-media__even">
+          <div class="social-media__upper">
+            <div class="social-media__upper-banner">
+              <img src="/assets/images/connect-1.png" alt="Danny Social Media Connect">
+            </div>
+            <div class="social-media__upper-info">
+              <h2 class="social-media__heading">
+                Begin your journey with me,
+                <br>
+                I’ve expertise in those apps.
+              </h2>
+              <p class="social-media__description" style="text-align: left;">
+                I design, create, and maintain computer programs and applications.
+                <br>
+                I analyze user needs, write code, test, and continuously improve software to meet client requirements
+                and industry standards.
+              </p>
+              <a href="https://www.linkedin.com/in/dannytran3000/"
+                class="social-media__button button button--appearance-ghost" target="_blank">
+                <img src="/assets/images/linkedin.png" alt="Danny LinkedIn Link Icon" class="social-media__button-icon">
+                <span>Check My LinkedIn</span>
+              </a>
+            </div>
+          </div>
+          <div class="social-media__under">
+            <ul class="social-media__stack-list">
+              <li class="social-media__stack-item">
+                <div class="stack">
+                  <div class="stack__banner">
+                    <img src="/assets/images/react.png" alt="Danny Skill">
+                  </div>
+                  <h5 class="stack__title">MERN Stack</h5>
+                  <p class="stack__description">
+                    A Combination of MongoDB, Express, React, Node.js for web development.
+                  </p>
+                </div>
+              </li>
+              <li class="social-media__stack-item">
+                <div class="stack">
+                  <div class="stack__banner">
+                    <img src="/assets/images/database.png" alt="Danny Skill">
+                  </div>
+                  <h5 class="stack__title">WAMP Stack</h5>
+                  <p class="stack__description">
+                    Windows, Apache, MySQL, PHP for web application development on Windows systems.
+                  </p>
+                </div>
+              </li>
+              <li class="social-media__stack-item">
+                <div class="stack">
+                  <div class="stack__banner">
+                    <img src="/assets/images/wordpress.png" alt="Danny Skill">
+                  </div>
+                  <h5 class="stack__title">Wordpress CMS Framework</h5>
+                  <p class="stack__description">
+                    Popular, user-friendly, open-source platform for website content management and blogging.
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="social-media__odd">
+          <h2 class="social-media__heading">
+            Looks like you’re serious
+            <br>
+            about getting stuff done!
+          </h2>
+          <a class="button button--size-lg">Get More Inspiration</a>
+          <p class="social-media__joke">
+            Think carefully since this opportunity will not come again.
+            <br>
+            It's a tiny world.
+          </p>
+        </div>
+      </section>
+      <section id="project" class="project">
+        <div class="project__upper">
+          <div class="project__upper-info">
+            <h2 class="project__heading">
+              Check out some of the
+              <br>
+              products I've worked on
+            </h2>
+            <p class="project__description" style="text-align: left;">
+              Through close client collaboration, I gained insight into their business goals and audience needs,
+              designing a user interface that not only met but exceeded their expectations, effectively achieving their
+              objectives.
+            </p>
+            <a href="#project" class="project__button button button--appearance-ghost">
+              View All My Works
+            </a>
+          </div>
+          <div class="project__upper-banner">
+            <img src="/assets/images/project.png" alt="Danny Projects">
+          </div>
+        </div>
+        <div class="project__under">
+          <ul class="project__work-list">
+            <li class="project__work-item">
+              <div class="work-card"></div>
+            </li>
+          </ul>
+        </div>
       </section>
     </main>
   </div>
