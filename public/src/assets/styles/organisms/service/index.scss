@@ -1,0 +1,101 @@
+.service {
+  padding: 0;
+
+  &__odd {
+    padding: 80px 40px;
+    background: var(--white-smoke);
+
+    @media screen and (max-width: 556px) {
+      padding: 60px 0;
+    }
+  }
+
+  &__even {
+    padding: 80px 40px;
+
+    @media screen and (max-width: 556px) {
+      padding: 60px 16px;
+    }
+  }
+
+  &__container {
+    max-width: 960px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__code {
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+  }
+
+  &__banner {
+    width: 120px;
+    height: 120px;
+    margin: 0 0 24px 0;
+  }
+
+  &__heading {
+    margin: 0 0 16px 0;
+    font-size: 32px;
+    line-height: 1.3;
+
+    @media screen and (max-width: 556px) {
+      padding: 0 16px;
+
+      font-size: 24px;
+
+      text-align: center;
+    }
+  }
+
+  &__description {
+    max-width: 640px;
+    margin: 0 0 16px 0;
+
+    line-height: 2;
+    text-align: center;
+  }
+
+  &__card-list {
+    width: 100%;
+    padding: 32px 0 0 0;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+
+    @media screen and (max-width: 556px) {
+      height: 330px;
+
+      flex-direction: column;
+      overflow-x: auto;
+    }
+  }
+
+  &__card-item {
+    width: calc(100% / 3 - 24px);
+    margin: 0 12px 24px 12px;
+
+    @media screen and (max-width: 992px) {
+      width: calc(50% - 24px);
+    }
+
+    @media screen and (max-width: 556px) {
+      width: calc(75% - 32px);
+      margin: 0 16px 32px 16px;
+    }
+
+    .service-card {
+      height: 100%;
+
+      @media screen and (max-width: 556px) {
+        height: 270px;
+      }
+    }
+  }
+}
