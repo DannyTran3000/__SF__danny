@@ -1,0 +1,11 @@
+@keyframes arrow-slide {
+  0% {
+    right: -27px;
+  }
+  50% {
+    right: -40px;
+  }
+  100% {
+    right: -27px;
+  }
+}/*# sourceMappingURL=animation.css.map */

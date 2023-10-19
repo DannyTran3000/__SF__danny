@@ -1,0 +1,34 @@
+.input__label {
+  margin: 0 0 4px 0;
+  display: block;
+  font-weight: 700;
+}
+.input__field {
+  width: 100%;
+  height: 40px;
+  padding: 0 12px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border 0.25s ease-in-out;
+}
+.input__field:focus {
+  outline: none;
+  border-color: #333;
+}
+.input__textarea {
+  width: 100%;
+  min-height: 80px;
+  max-height: 240px;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-family: "Roboto";
+  transition: border 0.25s ease-in-out;
+  resize: vertical;
+}
+.input__textarea:focus {
+  outline: none;
+  border-color: #333;
+}/*# sourceMappingURL=index.css.map */

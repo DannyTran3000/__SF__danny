@@ -1,0 +1,117 @@
+.contact {
+  padding: 0;
+
+
+  &__upper {
+    position: relative;
+    padding: 120px 40px;
+
+    background: var(--white-smoke);
+
+    @media screen and (max-width: 556px) {
+      padding: 120px 16px;
+    }
+  }
+
+  &__upper-container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  &__double-quotes {
+    position: absolute;
+    top: 80px;
+    left: 0;
+    
+    width: 100%;
+    height: calc(100% - 160px);
+
+    pointer-events: none;
+  }
+
+  &__quote-content {
+    max-width: 480px;
+    margin: 0 auto 12px auto;
+
+    line-height: 1.5;
+    text-align: center;
+
+    @media screen and (max-width: 556px) {
+      max-width: 300px;
+    }
+  }
+
+  &__quote-author {
+    font-size: 16px;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  &__under {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 80px 40px;
+
+    display: flex;
+
+    @media screen and (max-width: 556px) {
+      padding: 60px 16px;
+    }
+  }
+
+  &__under-banner {
+    width: 360px;
+
+    @media screen and (max-width: 992px) {
+      display: none;
+    }
+
+    & > img {
+      height: auto;
+    }
+  }
+
+  &__under-form {
+    max-width: 480px;
+    margin: 0 0 0 48px;
+    padding: 0 56px 0 0;
+
+    flex: 1;
+
+    @media screen and (max-width: 992px) {
+      margin: 0 auto;
+      padding: 0;
+    }
+  }
+
+  &__sub-heading {
+    margin: 0 0 12px 0;
+
+    font-size: 18px;
+    line-height: 24px;
+  }
+
+  &__heading {
+    margin: 0 0 12px 0;
+
+    font-size: 48px;
+    line-height: 1;
+  }
+
+  &__description {
+    margin: 0 0 12px 0;
+
+    line-height: 1.5;
+  }
+
+  &__input {
+    margin: 0 0 16px 0;
+  }
+
+  &__joke {
+    margin: 12px 0 0 0;
+
+    font-size: 12px;
+    line-height: 1.5;
+  }
+}

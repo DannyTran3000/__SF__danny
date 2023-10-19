@@ -1,0 +1,16 @@
+{
+  "heading": "Software Developer",
+  "sub_heading": "👋 Hi! my name is Danny Tran & I am a",
+  "description": "Elevating Digital Experiences Through Elegant Code:<br />With a deep passion for innovation, I craft software solutions that transform ideas into exceptional realities, leaving a lasting mark on the digital landscape.",
+  "buttons": {
+    "primary": {
+      "text": "Get Started",
+      "url": "#about"
+    },
+    "secondary": {
+      "text": "Contact Me",
+      "url": "#contact"
+    }
+  },
+  "joke": "Why do software developers make great superheroes?<br />Because they always save the day with their coding superpowers! 💻💥"
+}
