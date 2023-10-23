@@ -1,8 +1,13 @@
 <?php
-require_once(ROOT_PATH . 'app/models/CustomizationModel.php');
-require_once(ROOT_PATH . "helpers/index.php");
+require_once(ROOT_PATH . 'models/CustomizationModel.php');
+require_once(ROOT_PATH . 'models/WorkModel.php');
+require_once(ROOT_PATH . 'models/ServiceModel.php');
+require_once(ROOT_PATH . 'models/TechStackModel.php');
 
 $customization_model = new CustomizationModel();
+$work_model = new WorkModel();
+$service_model = new ServiceModel();
+$tech_stack_model = new TechStackModel();
 
 class PageController
 {
@@ -10,22 +15,29 @@ class PageController
 
   public function index($p, $q)
   {
-    global $customization_model;
-    $result = $customization_model->getAll();
+    global $customization_model, $work_model, $service_model, $tech_stack_model;
+
+    $customization_result = $customization_model->getAll();
     $sections = [];
-    foreach($result as $key =>$value)
+    foreach ($customization_result as $key => $value)
       $sections[$value['section']] = $value;
-    
+
+    $service_result = $service_model->getAll();
+
+    $tech_stack_result = $tech_stack_model->getAll();
+
+    $featured_work_result = $work_model->get_featured_works();
+
     // The 'index' method is used to display the home page.
     // It includes the 'Home.php' view to render the content.
-    include_with_variables(
-      ROOT_PATH . 'app/views/Home.php',
+    include_view(
+      ROOT_PATH . 'views/Home.php',
       [
         'data' => [
-          'customization' => [
-            'hero' => $sections['hero'],
-            'about' => $sections['about'],
-          ]
+          'customization' => $sections,
+          'services' => $service_result,
+          'tech_stacks' => $tech_stack_result,
+          'featured_works' => $featured_work_result
         ],
         'status' => 'success'
       ]

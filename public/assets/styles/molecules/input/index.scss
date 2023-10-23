@@ -6,6 +6,12 @@
 
     font-weight: 700;
   }
+
+  &__label-required {
+    margin: 0 0 0 4px;
+
+    color: #f00;
+  }
   
   &__field {
     width: 100%;
@@ -40,6 +46,10 @@
     transition: border 0.25s ease-in-out;
 
     resize: vertical;
+
+    @media screen and (max-width: 992px) {
+      height: 160px;
+    }
 
     &:focus {
       outline: none;

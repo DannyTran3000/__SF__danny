@@ -1,3 +1,7 @@
+<?php
+// Decode JSON customization data into a PHP object
+$content = json_decode($contact['content']);
+?>
 <section id="contact-me" class="contact">
   <div class="contact__upper">
     <div class="contact__upper-container">
@@ -18,11 +22,11 @@
         </defs>
       </svg>
       <p class="contact__quote-content">
-        Software development is a race between engineers, striving to build bigger and better idiot-proof
-        programs,
-        and the universe, trying to produce bigger and better idiots. So far, the universe is winning.
+        <?php echo $content->quote->content; ?>
       </p>
-      <h5 class="contact__quote-author">- Rick Cook</h5>
+      <h5 class="contact__quote-author">-
+        <?php echo $content->quote->author; ?>
+      </h5>
     </div>
   </div>
   <div id="contact" class="contact__under">
@@ -30,29 +34,72 @@
       <img src="/assets/images/contact.png" alt="Danny Contact" loading="lazy">
     </div>
     <div class="contact__under-form">
-      <h4 class="contact__sub-heading">Looks like you need some help!!!</h4>
-      <h2 class="contact__heading">Reach Out!</h2>
+      <h4 class="contact__sub-heading">
+        <?php echo $content->sub_heading; ?>
+      </h4>
+      <h2 class="contact__heading">
+        <?php echo $content->heading; ?>
+      </h2>
       <p class="contact__description">
-        I usually respond within an hour, but developers do sleep three to six hours a night, so it might take a
-        bit longer. Thank you and I am looking to hearing from you.
+        <?php echo $content->description; ?>
       </p>
-      <form onsubmit="return false;">
-        <div class="contact__input input">
-          <label for="name" class="input__label">Name</label>
-          <input type="text" class="input__field" name="name" placeholder="John Doe">
-        </div>
-        <div class="contact__input input">
-          <label for="email" class="input__label">Email Address</label>
-          <input type="email" class="input__field" name="email" placeholder="Example@mail.com">
-        </div>
-        <div class="contact__input input">
-          <label for="message" class="input__label">Message</label>
-          <textarea name="message" id="" class="input__textarea" placeholder="What is the issue?"></textarea>
-        </div>
-        <button class="button button--size-lg" type="submit">Submit</button>
+      <form id="contact__form" onsubmit="ContactForm__onSubmit(); return false;">
+        <?php
+        include_view(
+          ROOT_PATH . 'views/components/molecules/Input.php',
+          [
+            'attr' => [
+              'name' => 'name',
+              'placeholder' => 'John Doe',
+              'required' => 'true'
+            ],
+            'container_attr' => ['class' => 'contact__input'],
+            'label_props' => ['children' => 'Name'],
+          ]
+        );
+        include_view(
+          ROOT_PATH . 'views/components/molecules/Input.php',
+          [
+            'attr' => [
+              'name' => 'email',
+              'placeholder' => 'Example@mail.com',
+              'required' => 'true',
+              'type' => 'email'
+            ],
+            'container_attr' => ['class' => 'contact__input'],
+            'label_props' => ['children' => 'Email Address']
+          ]
+        );
+        include_view(
+          ROOT_PATH . 'views/components/molecules/Input.php',
+          [
+            'attr' => [
+              'name' => 'message',
+              'placeholder' => 'What is the issue?',
+              'required' => 'true',
+              'type' => 'textarea'
+            ],
+            'container_attr' => ['class' => 'contact__input'],
+            'label_props' => ['children' => 'Message']
+          ]
+        );
+        ?>
+        <div class="contact__validation"></div>
+        <?php
+        include_view(
+          ROOT_PATH . 'views/components/atoms/Button.php',
+          [
+            'attr' => ['type' => 'submit'],
+            'props' => [
+              'size' => 'lg',
+              'children' => 'Submit',
+            ]
+          ]
+        );
+        ?>
       </form>
       <p class="contact__joke">
-        By submitting this form, you acknowledge receipt of the Privacy and policy.
+        <?php echo $content->joke; ?>
       </p>
     </div>
   </div>

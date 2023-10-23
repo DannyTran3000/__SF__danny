@@ -1,5 +1,5 @@
 <?php
-function include_with_variables($file_path, $variables = array(), $print = true)
+function include_view($file_path, $variables = array(), $print = true)
 {
   // Extract the variables to a local namespace
   extract($variables);
@@ -16,4 +16,17 @@ function include_with_variables($file_path, $variables = array(), $print = true)
     return $output;
   }
   echo $output;
+}
+
+function encode_attribute($attr)
+{
+  $attributes_string = '';
+
+  if (isset($attr)) {
+    foreach ($attr as $key => $value) {
+      $attributes_string .= $key . '="' . $value . '" ';
+    }
+  }
+
+  return $attributes_string;
 }
