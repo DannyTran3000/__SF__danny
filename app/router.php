@@ -1,27 +1,39 @@
 <?php
-// Include the 'PageController.php' file from the 'app/controllers' directory using ROOT_PATH
-require_once(ROOT_PATH . 'app/controllers/PageController.php');
+require_once(ROOT_PATH . 'controllers/ContactController.php');
+require_once(ROOT_PATH . 'controllers/PageController.php');
 
-// Create an instance of the PageController
+$contact_controller = new ContactController();
 $page_controller = new PageController();
-
-// Define a Router class to handle routing logic
 class Router
 {
-  // The dispatch method receives the path ($p) and query parameters ($q)
-  public function dispatch($p, $q)
+  public function dispatch($method, $p, $q)
   {
-    global $page_controller; // Access the PageController instance
+    $routes = [
+      '/' => [
+        'GET' => function (...$args) {
+          global $page_controller;
+          return $page_controller->index(...$args);
+        }
+      ],
+      '/contact' => [
+        'POST' => function () {
+          global $contact_controller;
+          return $contact_controller->index();
+        }
+      ]
+    ];
 
-    // Use a switch statement to determine the appropriate action based on the path ($p)
-    switch ($p) {
-      case '/':
-        // Route to the 'index' method of the PageController
-        $page_controller->index();
-        break;
-      default:
-        // If the path doesn't match any known routes, display a "Page not found" message
-        echo "Page not found";
+    $action = null;
+
+    echo "<script>console.log('go here" . ', ' . $p . "');</script>";
+
+    if (isset($routes[$p]))
+      $action = isset($routes[$p][strtoupper($method)]) ? $routes[$p][strtoupper($method)]($p, $q) : null;
+
+    if (isset($action)) {
+      $action();
+    } else {
+      echo "Page Not Found";
     }
   }
 }

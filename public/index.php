@@ -5,6 +5,7 @@ define('ROOT_PATH', '../app/');
 // Include the PageController class
 require_once ROOT_PATH . 'controllers/PageController.php';
 require_once ROOT_PATH . 'helper.php';
+require_once ROOT_PATH . 'router.php';
 
 // Get the request URI and remove any trailing slashes
 $uri = rtrim($_SERVER['REQUEST_URI']);
@@ -35,7 +36,7 @@ if (isset($split_uri[1])) {
 }
 
 // Create an instance of the PageController class
-$page_controller = new PageController();
+$router = new Router();
 
 // Call the index method of PageController and pass the path and queries
-$page_controller->index($path, $queries);
+$router->dispatch($_SERVER['REQUEST_METHOD'], $path, $queries);

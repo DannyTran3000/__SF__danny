@@ -4,6 +4,7 @@ $state = [
   'description' => $props['description'],
   'thumbnail' => $props['status'] != 2 ? $props['thumbnail'] ?? '' : '/assets/upload/coming-soon.jpg',
   'thumbnail_name' => 'Danny Skill - ' . $props['title'] ?? '',
+  'url' => $props['url'] ?? '',
   'status' => $props['status'],
   'class_name' => implode(
     ' ',
@@ -29,7 +30,7 @@ $state = [
   <?php
   if ($state['status'] == 1) {
     ?>
-    <a href="<?php echo $data['url']; ?>" class="work-card__link" target="_blank">Check it out</a>
+    <a href="<?php echo $state['url']; ?>" class="work-card__link" target="_blank">Check it out</a>
     <?php
   } else {
     ?>

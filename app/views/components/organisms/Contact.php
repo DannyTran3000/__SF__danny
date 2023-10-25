@@ -2,6 +2,7 @@
 // Decode JSON customization data into a PHP object
 $content = json_decode($contact['content']);
 ?>
+
 <section id="contact-me" class="contact">
   <div class="contact__upper">
     <div class="contact__upper-container">
@@ -43,7 +44,7 @@ $content = json_decode($contact['content']);
       <p class="contact__description">
         <?php echo $content->description; ?>
       </p>
-      <form id="contact__form" onsubmit="ContactForm__onSubmit(); return false;">
+      <form id="contact__form" method="POST" action="/contact">
         <?php
         include_view(
           ROOT_PATH . 'views/components/molecules/Input.php',
@@ -64,7 +65,8 @@ $content = json_decode($contact['content']);
               'name' => 'email',
               'placeholder' => 'Example@mail.com',
               'required' => 'true',
-              'type' => 'email'
+              'type' => 'email',
+              'onchange' => 'ContactForm__resetValidation()'
             ],
             'container_attr' => ['class' => 'contact__input'],
             'label_props' => ['children' => 'Email Address']
@@ -84,7 +86,6 @@ $content = json_decode($contact['content']);
           ]
         );
         ?>
-        <div class="contact__validation"></div>
         <?php
         include_view(
           ROOT_PATH . 'views/components/atoms/Button.php',
@@ -101,6 +102,7 @@ $content = json_decode($contact['content']);
       <p class="contact__joke">
         <?php echo $content->joke; ?>
       </p>
+      <div class="contact__validation"></div>
     </div>
   </div>
 </section>

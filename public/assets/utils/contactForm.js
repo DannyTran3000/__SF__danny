@@ -1,3 +1,8 @@
+const ContactForm__resetValidation = () => {
+  const validationBox = document.querySelector('#contact .contact__validation')
+    if (validationBox) validationBox.innerHTML = ''
+}
+
 const ContactForm__onSubmit = () => {
   const form = document.querySelector('#contact__form')
   if (!form) return
@@ -11,10 +16,29 @@ const ContactForm__onSubmit = () => {
   const message = messageInput?.value || null
   
   if (!checkValidEmail(email)) {
-    const validationBox = form.querySelector('.contact__validation')
+    const validationBox = document.querySelector('#contact .contact__validation')
     if (validationBox) validationBox.innerHTML = `
         <p>Invalid email address!!! Please check your Email address input.</p>
       `
     else window.alert('Invalid email address!!! Please check your Email address input.')
+
+    return
   }
+
+  const response = fetch(
+    '/index.php',
+    {
+      method: 'POST',
+      body: {
+        data: {hello: 'asdlasnd'} 
+      }
+    }
+  )
+
+  response.then(res => {
+    return res.json()
+    // console.log(res.json())
+  }).then(res => console.log(res))
+
+  // console.log(response)
 }
