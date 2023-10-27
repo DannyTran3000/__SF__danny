@@ -44,7 +44,7 @@ $content = json_decode($contact['content']);
       <p class="contact__description">
         <?php echo $content->description; ?>
       </p>
-      <form id="contact__form" method="POST" action="/contact">
+      <form id="contact__form" onsubmit="ContactForm__onSubmit(); return false;">
         <?php
         include_view(
           ROOT_PATH . 'views/components/molecules/Input.php',

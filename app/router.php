@@ -16,24 +16,20 @@ class Router
         }
       ],
       '/contact' => [
-        'POST' => function () {
+        'POST' => function ($params, $queries) {
           global $contact_controller;
           return $contact_controller->index();
         }
       ]
     ];
 
-    $action = null;
 
-    echo "<script>console.log('go here" . ', ' . $p . "');</script>";
+    $is_exist_method = isset($routes[$p]) && array_key_exists(strtoupper($method), $routes[rtrim($p)]);
 
-    if (isset($routes[$p]))
-      $action = isset($routes[$p][strtoupper($method)]) ? $routes[$p][strtoupper($method)]($p, $q) : null;
-
-    if (isset($action)) {
-      $action();
+    if ($is_exist_method) {
+      $routes[rtrim($p)][strtoupper($method)]($p, $q);
     } else {
-      echo "Page Not Found";
+      echo "Page not found";
     }
   }
 }

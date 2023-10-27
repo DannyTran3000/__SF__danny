@@ -3,42 +3,31 @@ const ContactForm__resetValidation = () => {
     if (validationBox) validationBox.innerHTML = ''
 }
 
+const ContactForm__displayError = (message) => {
+  const validationBox = document.querySelector('#contact .contact__validation')
+  if (validationBox) validationBox.innerHTML = `
+      <p>{message}</p>
+    `
+  else window.alert(messgae)
+}
+
+const ContactForm__handleSubmit = (data) => {
+  console.log('go here', data)
+}
+
 const ContactForm__onSubmit = () => {
   const form = document.querySelector('#contact__form')
-  if (!form) return
-
-  const nameInput = form.querySelector('input[name="name"]')
-  const emailInput = form.querySelector('input[name="email"]')
-  const messageInput = form.querySelector('textarea[name="message"]')
-
-  const name = nameInput?.value || null
-  const email = emailInput?.value || null
-  const message = messageInput?.value || null
-  
-  if (!checkValidEmail(email)) {
-    const validationBox = document.querySelector('#contact .contact__validation')
-    if (validationBox) validationBox.innerHTML = `
-        <p>Invalid email address!!! Please check your Email address input.</p>
-      `
-    else window.alert('Invalid email address!!! Please check your Email address input.')
-
+  if (!form) {
+    console.log('Form Not Found')
     return
   }
 
-  const response = fetch(
-    '/index.php',
-    {
-      method: 'POST',
-      body: {
-        data: {hello: 'asdlasnd'} 
-      }
-    }
-  )
+  const email = form.querySelector('input[name="email"]')?.value || null
+  if (!checkValidEmail(email)) {
+    ContactForm__displayError('Invalid email address!!! Please check your Email address input.')
+    return
+  }
 
-  response.then(res => {
-    return res.json()
-    // console.log(res.json())
-  }).then(res => console.log(res))
-
-  // console.log(response)
+  const formData = new FormData(form)
+  send_request('/contact', 'POST', formData, ContactForm__handleSubmit)
 }
