@@ -72,6 +72,7 @@ $tech_stacks = $data['tech_stacks'];
     // Include the 'Footer.php' template
     include(ROOT_PATH . 'views/components/templates/Footer.php');
     ?>
+    <div id="loader"></div>
   </div>
   <?php
   // Include the 'JSLinks.php' template

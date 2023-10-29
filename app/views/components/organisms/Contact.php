@@ -43,7 +43,7 @@ $content = json_decode($contact['content']);
       </h2>
       <p class="contact__description">
         <?php echo $content->description; ?>
-      </p>
+      </p>"
       <form id="contact__form" onsubmit="ContactForm__onSubmit(); return false;">
         <?php
         include_view(

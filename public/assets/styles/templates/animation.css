@@ -8,4 +8,12 @@
   100% {
     right: -27px;
   }
+}
+@keyframes loading-spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(1440deg);
+  }
 }/*# sourceMappingURL=animation.css.map */

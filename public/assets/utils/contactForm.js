@@ -8,11 +8,11 @@ const ContactForm__displayError = (message) => {
   if (validationBox) validationBox.innerHTML = `
       <p>{message}</p>
     `
-  else window.alert(messgae)
+  else window.alert(message)
 }
 
 const ContactForm__handleSubmit = (data) => {
-  console.log('go here', data)
+  setTimeout(() => toggleGlobalLoader(false), 3000)
 }
 
 const ContactForm__onSubmit = () => {
@@ -29,5 +29,6 @@ const ContactForm__onSubmit = () => {
   }
 
   const formData = new FormData(form)
-  send_request('/contact', 'POST', formData, ContactForm__handleSubmit)
+  toggleGlobalLoader(true)
+  sendRequest('/contact', 'POST', formData, ContactForm__handleSubmit)
 }

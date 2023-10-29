@@ -1,29 +1,51 @@
-<!-- Primary Import -->
-<link rel="stylesheet" href="/assets/styles/templates/fonts.css">
-<link rel="stylesheet" href="/assets/styles/templates/animation.css">
-<!-- End Primary Import -->
+<?php
+$original_links = [
+  // Primary
+  'fonts' => '/assets/styles/templates/fonts.css',
+  'animation' => '/assets/styles/templates/animation.css',
+  // Atoms
+  'button' => '/assets/styles/atoms/button/index.css',
+  // Molecules
+  'loader' => '/assets/styles/molecules/loader/index.css',
+  'serviceCard' => '/assets/styles/molecules/serviceCard/index.css',
+  'stack' => '/assets/styles/molecules/stack/index.css',
+  'workCard' => '/assets/styles/molecules/workCard/index.css',
+  'input' => '/assets/styles/molecules/input/index.css',
+  // organisms
+  'header' => '/assets/styles/organisms/header/index.css',
+  'hero' => '/assets/styles/organisms/hero/index.css',
+  'service' => '/assets/styles/organisms/service/index.css',
+  'socialMedia' => '/assets/styles/organisms/socialMedia/index.css',
+  'project' => '/assets/styles/organisms/project/index.css',
+  'contact' => '/assets/styles/organisms/contact/index.css',
+  'footer' => '/assets/styles/organisms/footer/index.css',
+  // templates
+  'global' => '/assets/styles/templates/index.css',
+];
 
-<!-- Atoms CSS -->
-<link rel="stylesheet" href="/assets/styles/atoms/button/index.css">
-<!-- End Atoms CSS -->
+$links = $original_links;
 
-<!-- Molecules CSS -->
-<link rel="stylesheet" href="/assets/styles/molecules/serviceCard/index.css">
-<link rel="stylesheet" href="/assets/styles/molecules/stack/index.css">
-<link rel="stylesheet" href="/assets/styles/molecules/workCard/index.css">
-<link rel="stylesheet" href="/assets/styles/molecules/input/index.css">
-<!-- End Molecules CSS -->
+if (isset($props['include']) && is_array($props['include'])) {
+  $links = [];
+  foreach ($original_links as $key => $value) {
+    if (in_array($key, $props['include'])) {
+      $links[$key] = $value;
+    }
+  }
+}
 
-<!-- Organisms CSS -->
-<link rel="stylesheet" href="/assets/styles/organisms/header/index.css">
-<link rel="stylesheet" href="/assets/styles/organisms/hero/index.css">
-<link rel="stylesheet" href="/assets/styles/organisms/service/index.css">
-<link rel="stylesheet" href="/assets/styles/organisms/socialMedia/index.css">
-<link rel="stylesheet" href="/assets/styles/organisms/project/index.css">
-<link rel="stylesheet" href="/assets/styles/organisms/contact/index.css">
-<link rel="stylesheet" href="/assets/styles/organisms/footer/index.css">
-<!-- End Organisms CSS -->
+if (isset($props['exclude']) && is_array($props['exclude'])) {
+  $tmp_links = [];
+  foreach ($links as $key => $value) {
+    if (!in_array($key, $props['exclude'])) {
+      $tmp_links[$key] = $value;
+    }
+  }
+  $links = $tmp_links;
+}
 
-<!-- Templates CSS -->
-<link rel="stylesheet" href="/assets/styles/templates/index.css">
-<!-- End Templates CSS -->
+foreach ($links as $link) {
+  ?>
+  <link rel="stylesheet" href="<?php echo $link; ?>">
+  <?php
+}

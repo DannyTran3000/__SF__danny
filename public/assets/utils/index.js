@@ -3,7 +3,7 @@ const checkValidEmail = (email) => {
   return emailRegex.test(email);
 }
 
-const send_request = (url, method, body, callback, opt) => {
+const sendRequest = (url, method, body, callback, opt) => {
   fetch(url, {
     method: method,
     body: body,
@@ -15,3 +15,7 @@ const send_request = (url, method, body, callback, opt) => {
     callback(data)
   } );
 }
+
+window.scrollTo({top: 0})
+toggleGlobalLoader(true, true)
+setTimeout(() => toggleGlobalLoader(false), 3000)

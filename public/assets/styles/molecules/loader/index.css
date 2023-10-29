@@ -1,0 +1,43 @@
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 400;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+.loader__container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader__spinner {
+  width: 80px;
+  height: 80px;
+  transform-origin: center;
+  animation-name: loading-spinner;
+  animation-duration: 4s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+.loader__content {
+  position: absolute;
+  bottom: 32px;
+  width: 100%;
+  text-align: center;
+}
+.loader__heading {
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.body[data-load=true] .loader--transparent {
+  background: rgba(255, 255, 255, 0.9);
+  -webkit-backdrop-filter: blur(4px);
+          backdrop-filter: blur(4px);
+}/*# sourceMappingURL=index.css.map */
