@@ -14,7 +14,7 @@ $content = json_decode($project['content']);
       </p>
       <?php
       include_view(
-        ROOT_PATH . 'views/components/atoms/Button.php',
+        DIR_APP . 'views/components/atoms/Button.php',
         [
           'attr' => [
             'class' => 'project__button',
@@ -39,7 +39,7 @@ $content = json_decode($project['content']);
       foreach ($featured_works as $work) {
         ?>
         <li class="project__work-item">
-          <?php include_view(ROOT_PATH . 'views/components/molecules/WorkCard.php', ['props' => $work]); ?>
+          <?php include_view(DIR_APP . 'views/components/molecules/WorkCard.php', ['props' => $work]); ?>
         </li>
         <?php
       }

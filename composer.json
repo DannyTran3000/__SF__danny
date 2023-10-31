@@ -1,0 +1,16 @@
+{
+  "name": "sf/danny",
+  "description": "A simple PHP MVC project",
+  "type": "project",
+  "autoload": {
+    "psr-4": {
+      "Src\\": "src/"
+    }
+  },
+  "scripts": {
+    "start": "php -S localhost:8000 -t public"
+  },
+  "require": {
+    "php": ">=7.2"
+  }
+}

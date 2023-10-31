@@ -26,7 +26,7 @@ $linkedin_content = json_decode($linkedin['content']);
     </p>
     <?php
     include_view(
-      ROOT_PATH . 'views/components/atoms/Button.php',
+      DIR_APP . 'views/components/atoms/Button.php',
       [
         'attr' => [
           'class' => 'social-media__button',
@@ -54,7 +54,7 @@ $linkedin_content = json_decode($linkedin['content']);
         </p>
         <?php
         include_view(
-          ROOT_PATH . 'views/components/atoms/Button.php',
+          DIR_APP . 'views/components/atoms/Button.php',
           [
             'attr' => [
               'class' => 'social-media__button',
@@ -76,7 +76,7 @@ $linkedin_content = json_decode($linkedin['content']);
         foreach ($tech_stacks as $stack) {
           ?>
           <li class="social-media__stack-item">
-            <?php include_view(ROOT_PATH . 'views/components/molecules/Stack.php', ['props' => $stack]); ?>
+            <?php include_view(DIR_APP . 'views/components/molecules/Stack.php', ['props' => $stack]); ?>
           </li>
           <?php
         }
@@ -90,7 +90,7 @@ $linkedin_content = json_decode($linkedin['content']);
     </h2>
     <?php
     include_view(
-      ROOT_PATH . 'views/components/atoms/Button.php',
+      DIR_APP . 'views/components/atoms/Button.php',
       [
         'attr' => ['href' => $connect_content->button->url],
         'props' => [

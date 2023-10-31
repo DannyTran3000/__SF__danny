@@ -15,7 +15,7 @@ $content = json_decode($about['content']);
         foreach ($services as $service) {
           ?>
           <li class="service__card-item">
-            <?php include_view(ROOT_PATH . 'views/components/molecules/ServiceCard.php', ['props' => $service]); ?>
+            <?php include_view(DIR_APP . 'views/components/molecules/ServiceCard.php', ['props' => $service]); ?>
           </li>
           <?php
         }

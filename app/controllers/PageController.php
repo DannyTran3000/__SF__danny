@@ -1,8 +1,8 @@
 <?php
-require_once(ROOT_PATH . 'models/CustomizationModel.php');
-require_once(ROOT_PATH . 'models/WorkModel.php');
-require_once(ROOT_PATH . 'models/ServiceModel.php');
-require_once(ROOT_PATH . 'models/TechStackModel.php');
+require_once(DIR_APP . 'models/CustomizationModel.php');
+require_once(DIR_APP . 'models/WorkModel.php');
+require_once(DIR_APP . 'models/ServiceModel.php');
+require_once(DIR_APP . 'models/TechStackModel.php');
 
 $customization_model = new CustomizationModel();
 $work_model = new WorkModel();
@@ -31,7 +31,7 @@ class PageController
     // The 'index' method is used to display the home page.
     // It includes the 'Home.php' view to render the content.
     include_view(
-      ROOT_PATH . 'views/Home.php',
+      DIR_APP . 'views/Home.php',
       [
         'data' => [
           'customization' => $sections,

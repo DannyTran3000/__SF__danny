@@ -15,7 +15,7 @@
     const loader = document.querySelector('#loader')
     if (!loader) return
 
-    loader.innerHTML = shouldShow ? `<?php include(ROOT_PATH . '/views/components/molecules/Loader.php');?>` : ''
+    loader.innerHTML = shouldShow ? `<?php include(DIR_APP . '/views/components/molecules/Loader.php');?>` : ''
   }
 </script>
 

@@ -1,6 +1,4 @@
 <?php
-require_once(ROOT_PATH . 'config.php');
-
 class TechStackModel
 {
   public function getAll()

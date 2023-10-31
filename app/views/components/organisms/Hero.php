@@ -18,7 +18,7 @@ $content = json_decode($data['content']);
       <div class="hero__action">
         <?php
         include_view(
-          ROOT_PATH . 'views/components/atoms/Button.php',
+          DIR_APP . 'views/components/atoms/Button.php',
           [
             'attr' => [
               'class' => 'hero__action-button',
@@ -31,7 +31,7 @@ $content = json_decode($data['content']);
           ]
         );
         include_view(
-          ROOT_PATH . 'views/components/atoms/Button.php',
+          DIR_APP . 'views/components/atoms/Button.php',
           [
             'attr' => [
               'class' => 'hero__action-button',

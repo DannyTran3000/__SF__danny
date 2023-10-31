@@ -1,6 +1,4 @@
 <?php
-require_once(ROOT_PATH . 'config.php');
-
 class WorkModel
 {
   public function get_featured_works()

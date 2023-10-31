@@ -1,0 +1,16 @@
+# Ignore Composer's vendor directory
+/vendor
+
+# Ignore Node.js modules (if used for build tools)
+/node_modules
+
+# Ignore IDE-specific files and directories
+.idea/
+.vscode/
+
+# Ignore log files
+/logs/
+composer.lock
+
+# Ignore environment-specific configuration files
+.env

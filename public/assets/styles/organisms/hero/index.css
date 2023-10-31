@@ -65,8 +65,8 @@
   line-height: 1.5;
 }
 .hero__banner {
-  width: 360px;
-  height: 360px;
+  width: 400px;
+  height: 400px;
 }
 @media screen and (max-width: 992px) {
   .hero__banner {

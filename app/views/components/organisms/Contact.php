@@ -47,7 +47,7 @@ $content = json_decode($contact['content']);
       <form id="contact__form" onsubmit="ContactForm__onSubmit(); return false;">
         <?php
         include_view(
-          ROOT_PATH . 'views/components/molecules/Input.php',
+          DIR_APP . 'views/components/molecules/Input.php',
           [
             'attr' => [
               'name' => 'name',
@@ -59,7 +59,7 @@ $content = json_decode($contact['content']);
           ]
         );
         include_view(
-          ROOT_PATH . 'views/components/molecules/Input.php',
+          DIR_APP . 'views/components/molecules/Input.php',
           [
             'attr' => [
               'name' => 'email',
@@ -73,7 +73,7 @@ $content = json_decode($contact['content']);
           ]
         );
         include_view(
-          ROOT_PATH . 'views/components/molecules/Input.php',
+          DIR_APP . 'views/components/molecules/Input.php',
           [
             'attr' => [
               'name' => 'message',
@@ -88,7 +88,7 @@ $content = json_decode($contact['content']);
         ?>
         <?php
         include_view(
-          ROOT_PATH . 'views/components/atoms/Button.php',
+          DIR_APP . 'views/components/atoms/Button.php',
           [
             'attr' => ['type' => 'submit'],
             'props' => [
